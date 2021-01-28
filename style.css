@@ -1,0 +1,463 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap');
+
+/* 
+The designs were created to the following widths:
+- Mobile: 375px
+- Desktop: 1366px */
+
+:root {
+  /* ### Neutral */
+
+  --dark-text: hsl(229, 25%, 31%);
+  --score-text: hsl(229, 64%, 46%);
+  --header-outline: hsl(217, 16%, 45%);
+
+  /* ### Background */
+
+  --radial-gradient: radial-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+
+  /* ### Players - colours */
+
+  --scissors: rgb(235, 158, 16);
+  --scissors-shadow: rgb(190, 111, 44);
+  --paper: rgb(72, 102, 250);
+  --paper-shadow: rgb(40, 70, 187);
+  --rock: rgb(219, 46, 74);
+  --rock-shadow: rgb(159, 22, 52);
+  --spock: rgb(60, 185, 205);
+  --spock-shadow: rgb(45, 142, 174);
+  --lizard: rgb(130, 78, 222);
+  --lizard-shadow: rgb(94, 54, 168);
+}
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+html {
+  font-size: 16px;
+  overflow: hidden;
+}
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background: var(--radial-gradient);
+  background-repeat: no-repeat;
+  color: #fff;
+  height: 120vh;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+.wrapper {
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.headBoard {
+  width: 100%;
+  margin: 2rem auto;
+  border: 2px solid var(--header-outline);
+  border-radius: 10px;
+}
+.resultBlock {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.score {
+  padding-top: 1rem;
+  width: 10rem;
+  border-radius: 10px;
+  background-color: #fff;
+  color: var(--score-text);
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.result {
+  line-height: 1;
+  margin: 0;
+  font-size: 4rem;
+  color: var(--dark-text);
+}
+
+.gameSet > li {
+  list-style: none;
+  text-decoration: none;
+  font-size: 2.4rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.buttons {
+  margin-top: -8rem;
+  margin-right: 3rem;
+  margin-left: auto;
+  width: 10rem;
+}
+.info,
+.rules {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  border: 1px solid #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  text-align: center;
+  width: 10rem;
+}
+.info:hover,
+.rules:hover,
+.card:hover {
+  cursor: pointer;
+}
+.gameRings {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  width: 30rem;
+  height: 25rem;
+  margin: 0 auto;
+  background-size: 280px;
+  background-position: center;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 10rem;
+  height: 10rem;
+}
+.ring {
+  border: 1rem transparent;
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  box-shadow: inset 0 6px rgba(214, 214, 214, 0.4);
+}
+.scissors {
+  border: 1rem solid var(--scissors);
+  box-shadow: 0 5px var(--scissors-shadow);
+  background-image: url('images/icon-scissors.svg');
+  background-position: center;
+}
+
+.rock {
+  border: 1rem solid var(--rock);
+  box-shadow: 0 5px var(--rock-shadow);
+  background-image: url('images/icon-rock.svg');
+  background-position: center;
+}
+
+.paper {
+  border: 1rem solid var(--paper);
+  box-shadow: 0 5px var(--paper-shadow);
+  background-image: url('images/icon-paper.svg');
+  background-position: center;
+}
+.paperMain {
+  justify-self: flex-end;
+  align-self: flex-end;
+}
+
+.spock {
+  border: 1rem solid var(--spock);
+  box-shadow: 0 5px var(--spock-shadow);
+  background-image: url('images/icon-spock.svg');
+  background-position: center;
+}
+
+.lizard {
+  border: 1rem solid var(--lizard);
+  box-shadow: 0 5px var(--lizard-shadow);
+  background-image: url('images/icon-lizard.svg');
+  background-position: center;
+}
+
+.paperBonus {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 30%;
+  transform: rotate(-15deg) translate(11em) rotate(15deg);
+}
+.rockBonus {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 30%;
+  transform: rotate(55deg) translate(11em) rotate(-55deg);
+}
+.lizardBonus {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 30%;
+  transform: rotate(129deg) translate(11em) rotate(-129deg);
+}
+.spockBonus {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 30%;
+  transform: rotate(200deg) translate(11em) rotate(-200deg);
+}
+.scissorsBonus {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 30%;
+  transform: rotate(274deg) translate(11em) rotate(-274deg);
+}
+
+.hidden {
+  display: none !important;
+}
+.winnerBoard {
+  margin: 2rem auto;
+  padding: 2rem;
+  width: 50rem;
+  display: flex;
+}
+.myCard {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 12rem;
+  height: 12rem;
+}
+.houseCard {
+  display: grid;
+  place-items: center;
+  position: relative;
+  border-radius: 50%;
+  background-color: #fff;
+  width: 12rem;
+  height: 12rem;
+}
+
+.ringCard,
+.houseRingCard {
+  display: grid;
+  place-items: center;
+  border: 1rem transparent;
+  border-radius: 50%;
+  box-shadow: inset 0 6px rgba(214, 214, 214, 0.3);
+  width: 10rem;
+  height: 10rem;
+}
+.myGame {
+  display: grid;
+  place-items: center;
+  width: 35%;
+}
+.showResults {
+  display: grid;
+  place-items: center;
+  position: relative;
+  z-index: 1;
+  width: 30%;
+}
+.houseGame {
+  display: grid;
+  place-items: center;
+  width: 35%;
+}
+.myPick,
+.housePick,
+.playAgain,
+.won {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+}
+.won {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.winner {
+  box-shadow: 0 0 0 50px hsl(217, 16%, 45%, 0.05),
+    0 0 0 100px hsl(217, 16%, 45%, 0.08), 0 0 0 150px hsl(217, 16%, 45%, 0.1);
+}
+
+.playAgain {
+  padding: 1rem 2.2rem;
+  font-weight: 700;
+  font-size: 1rem;
+  background-color: #fff;
+  color: rgb(159, 22, 52);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.bonusGame {
+  color: blue;
+  background-color: #fff;
+}
+.myImg {
+  display: none;
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#myImg:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(6, 15, 53, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content,
+#caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {
+    -webkit-transform: scale(0);
+  }
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 920px) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    height: 90vh;
+  }
+  .wrapper {
+    width: 60%;
+  }
+  .buttons {
+    margin-top: 0;
+  }
+  .gameRings {
+    height: 25rem;
+    margin-bottom: 2rem;
+  }
+  .winner {
+    box-shadow: 0 0 0 30px hsl(217, 16%, 45%, 0.05),
+      0 0 0 60px hsl(217, 16%, 45%, 0.08), 0 0 0 90px hsl(217, 16%, 45%, 0.1);
+  }
+
+  .myCard,
+  .houseCard {
+    width: 10rem;
+    height: 10rem;
+  }
+  .ringCard,
+  .houseRingCard {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 8px;
+  }
+  .modal-content {
+    width: 90%;
+  }
+  .gameRings {
+    background-size: 180px;
+  }
+  .rock,
+  .paper,
+  .scissors,
+  .spock,
+  .lizard {
+    background-size: 50%;
+  }
+  .winner {
+    box-shadow: 0 0 0 20px hsl(217, 16%, 45%, 0.05),
+      0 0 0 40px hsl(217, 16%, 45%, 0.08), 0 0 0 60px hsl(217, 16%, 45%, 0.1);
+  }
+}
+
+/* ### Last-item */
+.attribution {
+  margin: 0 auto;
+  margin-top: 3rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(227, 39%, 66%);
+}

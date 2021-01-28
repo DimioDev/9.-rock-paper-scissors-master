@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="wrapper">
+      <div class="headBoard">
+        <div class="resultBlock">
+          <ul class="gameSet">
+            <li>rock</li>
+            <li>paper</li>
+            <li>scissors</li>
+            <li class="bonus">lizard</li>
+            <li class="bonus">spock</li>
+          </ul>
+          <div class="score">SCORE
+            <h1 class="result"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="gameRings"></div>
+
+    <div class="winnerBoard">
+      <div class="myGame">
+        <h4 class="myPick">you picked</h4>
+
+        <div class="myCard">
+          <div class="ringCard">
+          </div>
+        </div>
+
+      </div>
+      <div class="showResults">
+        <h2 class="won"></h2>
+        <div class="playAgain">play again</div>
+      </div>
+      <div class="houseGame">
+        <h4 class="housePick">the house picked</h4>
+
+        <div class="houseCard">
+          <div class="houseRingCard">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="buttons">
+      <div class="info">bonus game</div>
+      <div class="rules">rules</div>
+    </div>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+      Coded by <a href="#">Dimitar Odrinski</a>
+    </div>
+  </div>
+  <!-- Trigger the Modal -->
+  <img class="myImg" id="myImg" src="images/image-rules.svg" alt="rules" width="300" height="200">
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- The Close Button -->
+    <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="img01">
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>
