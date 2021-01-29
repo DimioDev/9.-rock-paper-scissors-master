@@ -101,7 +101,7 @@ body {
 }
 
 .buttons {
-  margin-top: -8rem;
+  margin-top: -5rem;
   margin-right: 3rem;
   margin-left: auto;
   width: 10rem;
@@ -226,8 +226,9 @@ body {
   display: none !important;
 }
 .winnerBoard {
-  margin: 2rem auto;
+  margin: 2.5rem auto;
   padding: 2rem;
+  height: 20rem;
   width: 50rem;
   display: flex;
 }
@@ -453,7 +454,6 @@ body {
 /* ### Last-item */
 .attribution {
   margin: 0 auto;
-  margin-top: 3rem;
   font-size: 11px;
   text-align: center;
 }
